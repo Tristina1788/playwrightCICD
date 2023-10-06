@@ -17,3 +17,6 @@ jobs:
 
     - name: Run tests
       run: docker run --rm my-app npm test
+    
+    - name: Report tests
+      run: docker run --rm my-app npm test-html-report
