@@ -16,7 +16,7 @@ jobs:
       run: docker build --progress plain -t my-app .
 
     - name: Run tests
-      run: docker run --rm my-app npm test
+      run: docker run --rm my-app npm run test
     
     - name: Report tests
-      run: docker run --rm my-app npm test-html-report
+      run: docker run --rm my-app npm run report
