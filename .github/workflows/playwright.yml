@@ -16,17 +16,4 @@ jobs:
       run: docker build --progress plain -t my-app .
 
     - name: Run tests
-      run: docker run --rm -v /data:/app/playwright-report my-app npm run test
-      
-    - name: Print files in docker
-      run: docker exec -it my-app ls -a
-      
-    - name: Print files in local
-      run: ls
-      
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: playwright-report
-        path: /data
-        retention-days: 30
+      run: docker run --rm my-app npm run test
