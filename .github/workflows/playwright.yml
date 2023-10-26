@@ -19,7 +19,7 @@ jobs:
       run: docker run --rm -v /data:/app/playwright-report my-app npm run test
       
     - name: Print files in docker
-      run: docker exec -it my-app bash & ls -lsa
+      run: docker exec -it my-app ls -a
       
     - name: Print files in local
       run: ls
