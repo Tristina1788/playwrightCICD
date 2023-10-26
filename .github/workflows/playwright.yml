@@ -16,7 +16,14 @@ jobs:
       run: docker build --progress plain -t my-app .
 
     - name: Run tests
-      run: docker run --rm -v /data:/playwright-report my-app npm run report
+      run: docker run --rm -v /data:/app/playwright-report my-app npm run test
+      
+    - name: Print files in docker
+      run: docker exec -it my-app bash & ls -lsa
+      
+    - name: Print files in local
+      run: ls
+      
     - uses: actions/upload-artifact@v3
       if: always()
       with:
