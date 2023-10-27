@@ -15,4 +15,6 @@ test('get started link', async ({ page }) => {
 
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*intro/);
+  await page.getByRole('link', { name: 'Writing tests', exact: true }).isVisible();
+  await page.getByRole('link', { name: 'Generating tests', exact: true }).isVisible();
 });
