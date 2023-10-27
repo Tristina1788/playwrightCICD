@@ -4,6 +4,10 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  schedule:
+    # This example triggers the workflow every day at 5:40 and 5:45 UTC:
+    - cron: '40 5 * * *'
+    - cron: '45 5 * * *'
 jobs:
   test:
     runs-on: ubuntu-latest
