@@ -1,0 +1,3 @@
+wargame-*.sqlite
+# But allow a specific file
+!wargame-l6nngxlk.sqlite
