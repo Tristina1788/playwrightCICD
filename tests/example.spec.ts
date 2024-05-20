@@ -10,8 +10,8 @@ test('has title', async ({ page }) => {
 test('get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
   await expect(page.getByRole('link', { name: 'Docs' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'API' })).toBeVisible();
-  await expect(page.getByRole('link',{ name: 'PR' })).toBeVisible()
+  await expect(page.getByRole('link', { name: 'API' }).first()).toBeVisible();
+  await expect(page.getByRole('link',{ name: 'Community' })).toBeVisible()
   // Click the get started link.
   await page.getByRole('link', { name: 'Get started' }).click();
 
